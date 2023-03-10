@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <script src="node_modules/moment/moment.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="clockBox">
+        <div id="clockTime">
+            .
+        </div>
+        <div id="clockDate">
+            .
+        </div>
+    </div>
+
+    <script>
+        let clockTime = document.getElementById("clockTime");
+        let clockDate = document.getElementById("clockDate");
+        
+        // Manually added timezone information as it is currently 
+        // deprecated in Moment.js without the timezone addon
+        clockTime.innerHTML = moment().format("hh:mm A") + " CST";
+        clockDate.innerHTML = moment().format("ddd MMM DD, YYYY");
+    </script>
+    
+</body>
+</html>
