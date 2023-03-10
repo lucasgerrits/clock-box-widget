@@ -16,13 +16,20 @@
     </div>
 
     <script>
+        const secondsToUpdate = 10;
+
         let clockTime = document.getElementById("clockTime");
         let clockDate = document.getElementById("clockDate");
         
-        // Manually added timezone information as it is currently 
-        // deprecated in Moment.js without the timezone addon
-        clockTime.innerHTML = moment().format("hh:mm A") + " CST";
-        clockDate.innerHTML = moment().format("ddd MMM DD, YYYY");
+        const updateClock = function() {
+            // Manually added timezone information as it is currently 
+            // deprecated in Moment.js without the timezone addon
+            clockTime.innerHTML = moment().format("hh:mm A") + " CST";
+            clockDate.innerHTML = moment().format("ddd MMM DD, YYYY");
+        };
+
+        updateClock();
+        setInterval(updateClock, secondsToUpdate * 1000);
     </script>
     
 </body>
